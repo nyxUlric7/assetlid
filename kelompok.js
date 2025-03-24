@@ -117,7 +117,7 @@
         document.addEventListener("DOMContentLoaded", function () {
             const footer = document.createElement("footer");
             footer.className = "fixed bottom-0 right-5 bg-gray-800 text-white px-2 py-1 shadow-md rounded-t-xl text-xs w-fit";
-            footer.innerHTML = `<a href="https://example.com" target="_blank">by Warudhana</a>`;
+            footer.innerHTML = `<a href="https://lynk.id/jaya_wr" target="_blank">by Warudhana</a>`;
 
             // Menambahkan footer langsung ke body, tanpa div
             document.body.appendChild(footer);
