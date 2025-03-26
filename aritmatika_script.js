@@ -147,14 +147,14 @@
             jawaban = calculateExpression(ekspresi.rumus);
             
             document.getElementById("soal").textContent = ekspresi.rumus;
-            document.getElementById("jawabanInput").value = "";
-            document.getElementById("jawabanInput").focus();
+            document.getElementById("userInput").value = "";
+            document.getElementById("userInput").focus();
         }
         
         function cekJawaban() {
             const level = parseInt(document.getElementById("level").value);
-            const userJawaban = document.getElementById("jawabanInput").value.replace(",", ".");
-            const inputField = document.getElementById("jawabanInput");
+            const userJawaban = document.getElementById("userInput").value.replace(",", ".");
+            const inputField = document.getElementById("userInput");
 
             if (parseFloat(userJawaban) === parseFloat(jawaban)) {
                 playSound('matchSound');
@@ -169,7 +169,7 @@
                 playSound('failSound');
                 inputField.style.outline = "4px solid red";
                 checkbox.checked && serang(); // minus darah                
-                document.getElementById("jawabanInput").value = "";
+                document.getElementById("userInput").value = "";
                 setTimeout(() => {
                     inputField.style.outline = "1px solid gray";
                 }, 500);
@@ -179,7 +179,7 @@
         function tampilkanJawaban() {
             const level = parseInt(document.getElementById("level").value);
             
-            const inputField = document.getElementById("jawabanInput");
+            const inputField = document.getElementById("userInput");
             inputField.style.outline = "4px solid yellow";
             inputField.value = `${jawaban}`;
             setTimeout(() => {
@@ -188,15 +188,15 @@
             }, 1000);
         }
 
-        const jawabanInput = document.getElementById('jawabanInput');
+        const userInput = document.getElementById('userInput');
 
         // Event listener untuk menangani input (mencegah karakter non-angka)
-        jawabanInput.addEventListener('input', function() {
+        userInput.addEventListener('input', function() {
             this.value = this.value.replace(/[^0-9.-]/g, '');
         });
 
         // Event listener untuk menangani tombol Enter
-        jawabanInput.addEventListener('keydown', function(event) {
+        userInput.addEventListener('keydown', function(event) {
             if (event.key === 'Enter') {
             cekJawaban(level); // Panggil fungsi cekJawaban()
             }
