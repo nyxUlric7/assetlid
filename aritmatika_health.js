@@ -86,7 +86,7 @@
         
         function ulangModal() {
             document.getElementById("announcementModal").classList.add("hidden");
-            document.getElementById('jawabanInput').value = "";
+            document.getElementById('userInput').value = "";
             resetHealth();
             startTimer();
         }
